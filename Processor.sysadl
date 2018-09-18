@@ -1,0 +1,36 @@
+Model SysADLArchitecture;
+package SysADL.types {
+	value type Int {
+	}
+	value type Boolean {
+	}
+	value type String {
+	}
+	value type Void {
+	}
+	value type Real {
+	}
+}
+package TextProcessorPorts {
+	import TextProcessorTypes;
+	port def TextOPT {
+		flow out Text
+	}
+	port def WordArrayIPT {
+		flow in WordArray
+	}
+	port def nWordArrayOPT {
+		flow out WordArray
+	}
+}
+package TextProcessorTypes {
+	import SysADL.types;
+	value type Text extends SysADL.types.String {
+	}
+	value type WordArray {
+	}
+}
+package TextProcessorComponents {
+	import TextProcessorPorts;
+	import TextProcessorTypes;
+}
